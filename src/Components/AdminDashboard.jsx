@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
-import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 import { Box } from '@mui/material';
 import { useTheme } from './ThemeContext';
+import Sidebare from './Sidebare';
+
 
 const AdminDashboard = () => {
-  const [open, setOpen] = useState(true);
-  const handleDrawerOpen = () => setOpen(true);
-  const handleDrawerClose = () => setOpen(false);
-  const { darkMode } = useTheme(); // Access dark mode from context
+  const { darkMode } = useTheme();
 
   return (
+    <div className='font-medium'>
     <Box sx={{ display: 'flex', bgcolor: darkMode ? 'background.default' : 'white' }}>
-      <Sidebar open={open} handleDrawerClose={handleDrawerClose} />
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Topbar open={open} handleDrawerOpen={handleDrawerOpen} />
-       <center>  <h1>Tableau de Bord Admin</h1> </center>
+      {/* Sidebar à gauche */}
+      <Sidebare />
+
+      {/* Contenu principal */}
+      <Box component="main" sx={{ flexGrow: 1, p: 3, pt: '64px'}}>
+        <Topbar />
+        <center><h1 className='text-gray-900 '>Tableau de Bord Admin</h1></center>
         {/* Other dashboard content goes here */}
       </Box>
     </Box>
+    </div>
   );
 };
 

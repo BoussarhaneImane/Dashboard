@@ -1,0 +1,61 @@
+.topbar-container {
+     font-family: "Roboto", sans-serif;
+     font-weight: bold;
+     position: fixed;
+     top: 0;
+     left: 254px;
+     right: 0;
+     height: 64px;
+     z-index: 1000;
+     width: calc(100% - 250px);
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 2.5rem;
+     transition: left 0.3s ease, width 0.3s ease;
+   }
+   /*larges ecrans pcs*/
+   @media (min-width: 1024px) and (max-width: 1200px) {
+     .topbar-container {
+       left: 250px;
+       width: calc(100% - 250px);
+       padding: 0 20px;
+     }
+   }
+      /*larges ecrans tabelttes*/
+   @media (min-width: 768px) and (max-width: 1024px) {
+     .topbar-container {
+       left: 15px;
+       width: calc(100% - 20px);
+       padding: 0 15px;
+     }
+   }
+      /*petites ecrans*/
+   @media (max-width: 768px) {
+     .topbar-container {
+       left: 0;
+       width: 100%;
+       padding: 0 10px;
+     }
+   }
+     /*tres petites ecrans*/
+   @media (max-width: 480px) {
+     .topbar-container {
+       height: 56px;
+       padding: 0 5px;
+     }
+   }
+   
+   .icon-container {
+     display: flex; /* Use flex to center the icon within the container */
+     justify-content: center;
+     align-items: center;
+     border-radius: 50%; /* Rounded corners for the hover effect */
+     transition: background-color 0.3s ; /* Smooth transition for the background color */
+   }
+   
+   .icon-container:hover {
+     padding: 0.5rem;
+     background-color: rgba(211, 211, 211, 0.5); /* Light gray background on hover */
+   }
+   
